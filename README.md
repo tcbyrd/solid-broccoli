@@ -1,3 +1,3 @@
 # solid-broccoli
 
-test on tuesday @ 12:43
+test on tuesday @ 6:12

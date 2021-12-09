@@ -1,3 +1,3 @@
 # solid-broccoli
 
-test on wednesday morning
+test on thursday morning

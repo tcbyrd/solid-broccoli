@@ -1,3 +1,3 @@
 # solid-broccoli
 
-testing on Tuesday before launch
+sync test

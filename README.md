@@ -1,3 +1,3 @@
 # solid-broccoli
 
-test actions org
+test in prod

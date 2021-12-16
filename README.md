@@ -1,3 +1,3 @@
 # solid-broccoli
 
-sync test
+test on review-lab

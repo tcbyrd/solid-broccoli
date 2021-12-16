@@ -1,3 +1,3 @@
 # solid-broccoli
 
-test on review-lab
+test on prod

@@ -5,4 +5,4 @@
 
 This page was last updated at {{ "now" | date: "%Y-%m-%d %H:%M" }}
 
-Test on 404 day! 💚💚
+Test on 4/06 💚💚

@@ -5,4 +5,4 @@
 
 This page was last updated at {{ "now" | date: "%Y-%m-%d %H:%M" }}
 
-Test on 5/04 from review lab...
+Test on 5/04 without dynamic

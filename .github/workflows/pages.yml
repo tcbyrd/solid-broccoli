@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches: 
-      - gh-pages
+      - main
     
 
 permissions:

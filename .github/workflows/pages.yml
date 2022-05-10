@@ -1,0 +1,52 @@
+# This is the minimum workflow to build and deploy a Jekyll site to GitHub Pages
+name: Deploy Jekyll site to Pages
+
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+# This sets the permissions of the GITHUB_TOKEN to allow us to deploy to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build page with Jekyll
+        uses: actions/jekyll-build-pages@main
+        with:
+          source: ./
+          destination: ./_site
+      - name: Archive build output
+        run: "tar --dereference --directory _site/ -cvf artifact.tar ."
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: github-pages
+          path: artifact.tar
+  deploy:
+    environment: 
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
